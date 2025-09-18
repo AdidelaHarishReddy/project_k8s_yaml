@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind : Deployment
 metadata :
-    name: my-project-frontend-deployment
+    name: my-project-backend-deployment
     labels:
-          app: frontend      
+          app: backend
 spec: 
   replicas: 2
   selector:
     matchLabels:  
-      app: frontend
+      app: backend
   template:
        metadata:
          labels:
-           app: frontend    
+           app: backend
        spec:
          initContainers:
            - name: initcontainer
@@ -23,12 +23,9 @@ spec:
             #      - name: workdir
             #        mountPath: "home/initcar"
          containers:
-             - name: frontend
-               image: harishreddy1234/frontend:93
+             - name: backend
+               image: harishreddy1234/backend:93
                ports:
                  - containerPort: 80
                  - containerPort: 443
-                 - containerPort: 3000
-  env:
-     - name: REACT_APP_API_BASE_URL
-       value: "http://${{ secrets.AWS_HOST }}:8000"
+                 - containerPort: 8000

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: service
+metadata:
+    labels:
+        service: nodePort
+spec:
+   type: NodePort
+   selector:
+       matchLabels:
+           app: frontend
+       ports:
+         - name: frontendports
+           port: 3000
+           targetPort: 3000
+           nodePort: 30001
