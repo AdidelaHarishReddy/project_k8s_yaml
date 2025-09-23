@@ -5,5 +5,4 @@ metadata:
         configmap: REACT_APP_API_BASE_URL
 spec:
     data:
-        REACT_APP_API_BASE_URL: "http://${{ secrets.AWS_HOST }}:8000"
-        
+        REACT_APP_API_BASE_URL: "http://15.207.86.44:30002"

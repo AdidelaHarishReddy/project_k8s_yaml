@@ -24,11 +24,11 @@ spec:
             #        mountPath: "home/initcar"
          containers:
              - name: frontend
-               image: harishreddy1234/frontend:93
+               image: harishreddy1234/frontend:95
                ports:
                  - containerPort: 80
                  - containerPort: 443
                  - containerPort: 3000
   env:
      - name: REACT_APP_API_BASE_URL
-       value: "http://${{ secrets.AWS_HOST }}:8000"
+       value: "http://15.207.86.44:30002"
