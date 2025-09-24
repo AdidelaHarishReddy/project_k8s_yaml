@@ -2,7 +2,7 @@ apiVersion: v1
 kind: service
 metadata:
     labels:
-        service: clusterIP
+        service: front_clusterIP
 spec:
    type: clusterIP
    selecter:
