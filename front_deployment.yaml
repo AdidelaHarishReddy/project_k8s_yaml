@@ -31,4 +31,4 @@ spec:
                  - containerPort: 3000
   env:
      - name: REACT_APP_API_BASE_URL
-       value: "http://${{ secrets.AWS_HOST }}:8000"
+       value: "http://3.110.32.75:32002"
