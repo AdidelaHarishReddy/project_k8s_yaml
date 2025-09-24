@@ -1,31 +1,31 @@
 apiVersion: apps/v1
-kind : Deployment
-metadata :
-    name: my-project-backend-deployment
-    labels:
-          app: backend
-spec: 
+kind: Deployment
+metadata:
+  name: my-project-backend-deployment
+  labels:
+    app: backend
+spec:
   replicas: 2
   selector:
-    matchLabels:  
+    matchLabels:
       app: backend
   template:
-       metadata:
-         labels:
-           app: backend
-       spec:
-         initContainers:
-           - name: initcontainer
-             image: busybox
-             command: ["/bin/sh"]
-             args: ["-c", "sleep 10"]
-            #  volumeMounts: 
-            #      - name: workdir
-            #        mountPath: "home/initcar"
-         containers:
-             - name: backend
-               image: harishreddy1234/backend:95
-               ports:
-                 - containerPort: 80
-                 - containerPort: 443
-                 - containerPort: 8000
+    metadata:
+      labels:
+        app: backend
+    spec:
+      initContainers:
+        - name: initcontainer
+          image: busybox
+          command: ["/bin/sh"]
+          args: ["-c", "sleep 10"]
+          # volumeMounts:
+          #   - name: workdir
+          #     mountPath: "home/initcar"
+      containers:
+        - name: backend
+          image: harishreddy1234/backend:95
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+            - containerPort: 8000

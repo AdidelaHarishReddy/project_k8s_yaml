@@ -1,6 +1,6 @@
 apiVersion: apps/v1
-kind : StatefulSet
-metadata :
+kind: StatefulSet
+metadata:
     name: my-project-db-deployment
     labels:
           app: db
@@ -21,9 +21,9 @@ spec:
                  - containerPort: 80
                  - containerPort: 443
                  - containerPort: 5432
-       volumeMounts:
+               volumeMounts:
                  - name: pgdata
                    mountPath: "/var/lib/postgresql/data" 
-  volumes: 
-      - name: pgdata
-        emptyDir: {}
+       volumes: 
+         - name: pgdata
+           emptyDir: {}

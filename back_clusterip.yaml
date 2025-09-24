@@ -1,14 +1,13 @@
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
     labels:
-        service: clusterIP
+        service: ClusterIP
 spec:
-   type: clusterIP
-   selecter:
-       matchLabels:
-           app: backend
-       ports:
-         - name: backendports 
-           port: 8000
-           targetPort: 8000      
+  type: ClusterIP
+  selector:
+    app: backend
+  ports:
+    - name: backendports
+      port: 8000
+      targetPort: 8000

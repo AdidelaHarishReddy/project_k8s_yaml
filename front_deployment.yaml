@@ -1,34 +1,35 @@
 apiVersion: apps/v1
-kind : Deployment
-metadata :
-    name: my-project-frontend-deployment
-    labels:
-          app: frontend      
-spec: 
+kind: Deployment
+metadata:
+  name: my-project-frontend-deployment
+  labels:
+    app: frontend
+spec:
   replicas: 2
   selector:
-    matchLabels:  
+    matchLabels:
       app: frontend
   template:
-       metadata:
-         labels:
-           app: frontend    
-       spec:
-         initContainers:
-           - name: initcontainer
-             image: busybox
-             command: ["/bin/sh"]
-             args: ["-c", "sleep 10"]
-            #  volumeMounts: 
-            #      - name: workdir
-            #        mountPath: "home/initcar"
-         containers:
-             - name: frontend
-               image: harishreddy1234/frontend:95
-               ports:
-                 - containerPort: 80
-                 - containerPort: 443
-                 - containerPort: 3000
-  env:
-     - name: REACT_APP_API_BASE_URL
-       value: "http://15.207.86.44:30002"
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      initContainers:
+        - name: initcontainer
+          image: busybox
+          command: ["/bin/sh"]
+          args: ["-c", "sleep 10"]
+          # volumeMounts:
+          #   - name: workdir
+          #     mountPath: "home/initcar"
+      containers:
+        - name: frontend
+          image: harishreddy1234/frontend:95
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_API_BASE_URL
+              value: "http://15.207.86.44:30002"
+
