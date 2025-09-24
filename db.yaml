@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
+kind: StatefulSet
+metadata:
     name: my-project-db-deployment
     labels:
           app: db
