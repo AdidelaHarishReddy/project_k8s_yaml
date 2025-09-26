@@ -31,5 +31,5 @@ spec:
             - containerPort: 3000
           env:
             - name: REACT_APP_API_BASE_URL
-              value: "http://15.207.86.44:30002"
+              value: "http://13.232.65.18:30002"
 
