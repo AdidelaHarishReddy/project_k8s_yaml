@@ -34,5 +34,5 @@ spec:
           #     value: "http://13.232.65.18:30002"
           envFrom:
                  - configMapRef:
-                        name: REACT_APP_API_BASE_URL
+                        name: my-app-config-api-url
 
