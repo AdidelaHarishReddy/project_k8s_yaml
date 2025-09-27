@@ -29,7 +29,7 @@ spec:
     - metadata:
         name: pgdata
       spec:
-        accessModes: ["ReadWriteOnce"]
+        accessModes: ["ReadWriteMany"]
         resources:
           requests:
-            storage: 5Gi  # Adjust as needed
+            storage: 6Gi  # Adjust as needed
