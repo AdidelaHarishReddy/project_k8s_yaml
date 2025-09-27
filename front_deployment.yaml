@@ -29,7 +29,10 @@ spec:
             - containerPort: 80
             - containerPort: 443
             - containerPort: 3000
-          env:
-            - name: REACT_APP_API_BASE_URL
-              value: "http://13.232.65.18:30002"
+          # env:
+          #   - name: REACT_APP_API_BASE_URL
+          #     value: "http://13.232.65.18:30002"
+          envFrom:
+                 - configMapRef:
+                        name: REACT_APP_API_BASE_URL
 
