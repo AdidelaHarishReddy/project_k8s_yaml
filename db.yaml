@@ -28,8 +28,5 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: pgdata
-      spec:
-        accessModes: ["ReadWriteMany"]
-        resources:
-          requests:
-            storage: 6Gi  # Adjust as needed
+        persistentVolumeClaim:
+            claimName: postgres-data-pvc

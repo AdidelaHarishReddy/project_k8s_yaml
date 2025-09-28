@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+    name: sc-ebs
+provisioner: ebs.csi.aws.com
+reclaimPolicy: Retain
+parameters:
+     type: gp3
+     fsType: ext4
+volumeBindingMode: WaitForFirstConsumer # Ensures volume is created in the same zone as the pod
