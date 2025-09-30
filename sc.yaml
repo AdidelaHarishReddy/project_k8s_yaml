@@ -6,6 +6,6 @@ provisioner: ebs.csi.aws.com
 reclaimPolicy: Retain
 parameters:
   type: gp3
-#   fstype: ext4
+  fstype: ext4
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
