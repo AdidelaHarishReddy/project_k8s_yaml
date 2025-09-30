@@ -8,4 +8,4 @@ parameters:
   type: gp3
   fstype: ext4
 allowVolumeExpansion: true
-volumeBindingMode: WaitForFirstConsumer
+# volumeBindingMode: WaitForFirstConsumer
