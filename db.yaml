@@ -28,5 +28,9 @@ spec:
   volumeClaimTemplates:
     - metadata:
         name: pgdata
-        persistentVolumeClaim:
-            claimName: postgres-data-pvc
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: aws-ebs-db
+        resources:
+          requests:
+            storage: 10Gi
