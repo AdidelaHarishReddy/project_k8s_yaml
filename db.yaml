@@ -16,6 +16,8 @@ spec:
       labels:
         app: db
     spec:
+      securityContext:
+        fsGroup: 999  # Assumes postgres user UID is 999
       containers:
         - name: db
           image: harishreddy1234/db:v1.1
@@ -25,11 +27,10 @@ spec:
             - containerPort: 5432
           env:
             - name: PGDATA
-              value: /var/lib/postgresql/data
+              value: /var/lib/postgresql/data/pgdata  # Subdirectory to avoid 'lost+found' error
           volumeMounts:
             - name: pgdata
               mountPath: /var/lib/postgresql/data
-
   volumeClaimTemplates:
     - metadata:
         name: pgdata
