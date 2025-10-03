@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: db
+  name: db    # db HOST=db so keep same as host = db name for attach to backend
   namespace: project
   labels:
     app: db
