@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: headless-db-service              # ✅ Required name
+  name: headless-db-service              # ✅ Required name for access database. backend will catch the db{HOST=db} on the basis of svc name
   labels:
     service: headless_for_db
 spec:
