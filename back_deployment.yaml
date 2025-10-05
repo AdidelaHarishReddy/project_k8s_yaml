@@ -18,7 +18,7 @@ spec:
         - name: initcontainer
           image: busybox
           command: ["/bin/sh"]
-          args: ["-c", "sleep 10"]
+          args: ["-c", "sleep 30"]
           # volumeMounts:
           #   - name: workdir
           #     mountPath: "home/initcar"
