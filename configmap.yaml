@@ -8,4 +8,4 @@ metadata:
   labels:
     configmap: REACT_APP_API_BASE_URL
 data:
-  REACT_APP_API_BASE_URL: "http://65.1.135.227:30002"
+  REACT_APP_API_BASE_URL: "http://13.201.52.126:30002"
