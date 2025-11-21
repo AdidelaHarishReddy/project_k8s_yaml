@@ -1,12 +1,12 @@
 # pvc-db.yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-data-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce # Most databases require exclusive read/write access.
-  storageClassName: aws-ebs-db
-  resources:
-    requests:
-      storage: 10Gi # Requesting 10 GB of storage
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: postgres-data-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce # Most databases require exclusive read/write access.
+#   storageClassName: aws-ebs-db
+#   resources:
+#     requests:
+#       storage: 10Gi # Requesting 10 GB of storage
