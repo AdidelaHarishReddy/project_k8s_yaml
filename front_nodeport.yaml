@@ -9,7 +9,7 @@ spec:
    selector:
         app: frontend
    ports:
-      - name: frontendports
-        port: 3000
+      - name: http
+        port: 80
         targetPort: 80
         
