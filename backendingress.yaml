@@ -2,16 +2,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-backendapp-ingress
+  name: my-app-api-ingress
   namespace: project
+  annotations:
+    argocd.argoproj.io/tracking-id: my-app-api:networking.k8s.io/Ingress:project/main-api
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-  - host: mybackapp
+  - host: myapp.com
     http:
       paths:
-        - path: /
-          pathType: Prefix
+        - path: /api(/|$)(.*)
+          pathType: ImplementationSpecific
           backend:
             service:
               name: backend-clusterip
