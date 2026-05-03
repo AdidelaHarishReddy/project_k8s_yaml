@@ -24,7 +24,7 @@ spec:
           #     mountPath: "home/initcar"
       containers:
         - name: backend
-          image: harishreddy1234/backend:139
+          image: harishreddy1234/backend:148
           ports:
             - containerPort: 80
             - containerPort: 443
